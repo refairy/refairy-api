@@ -21,8 +21,8 @@ JSON 형태
 
     {
         "origin": "Dokdo is clearly a Japanese territory",
-        "is_wrong": "true",
+        "is_wrong": true,
         "category": "dokdo",
         "corrected": "Dokdo be Korean territory",
-        "confidence": "0.8",
+        "confidence": 0.8,
     }
