@@ -1,18 +1,19 @@
-from flask import Flask
-from .views.index import index as index_view
-from .views.check import check as check_view
+from sanic import Sanic
+
+from .routes.index import index as index_route
+from .routes.check import check as check_route
 from .utils.get_env import get_env
 
 
 def main(debug: bool=False):
-    app = Flask(__name__)
+    app = Sanic(__name__)
 
-    app.add_url_rule('/', view_func=index_view)
-    app.add_url_rule('/check', view_func=check_view, methods=['POST'])
+    app.add_route(index_route, '/')
+    app.add_route(check_route, '/check/', methods=['POST'])
 
     port = get_env('PORT')
-    app.run('0.0.0.0', port, debug=debug)
+    app.run('0.0.0.0', port=port, debug=debug)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
