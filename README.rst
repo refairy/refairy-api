@@ -23,20 +23,27 @@ request JSON
 .. code-block:: JSON
 
     {
-        "sentence": "string"
+        "sentences": [
+            "Dokdo is clearly a Japanese territory",
+            "Korea is China's subject state",
+            "Jeju-do belongs to Korea",
+        ]
     }
 
 response JSON
 
 .. code-block:: JSON
 
-    {
-        "origin": "Dokdo is clearly a Japanese territory",
-        "is_wrong": true,
-        "category": "dokdo",
-        "corrected": "Dokdo be Korean territory",
-        "confidence": 0.8,
-    }
+    [
+        {
+            "origin": "Dokdo is clearly a Japanese territory",
+            "is_wrong": true,
+            "category": "dokdo",
+            "corrected": "Dokdo be Korean territory",
+            "confidence": 0.8,
+        },
+        ...
+    ]
 
 설명
 
