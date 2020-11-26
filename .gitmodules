@@ -1,0 +1,4 @@
+[submodule "refairy_api/textAnalyzer"]
+	path = refairy_api/textAnalyzer
+	url = https://github.com/refairy/textAnalyzer.git
+	branch = main
