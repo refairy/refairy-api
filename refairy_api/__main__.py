@@ -1,11 +1,10 @@
 import sys
 from .app import main
+from .utils.parse import parse_flags
 
 
 if __name__ == '__main__':
-    if '-d' or '--debug' in sys.argv:
-        debug = True
-    else:
-        debug = False
+    flags: dict = parse_flags(sys.argv)
+    debug: bool = flags['debug']
 
     main(debug)

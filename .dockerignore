@@ -6,7 +6,7 @@ temp/
 **/__pycache__/
 .pytest_cache/
 
-.gitignore
-poetry.lock
-pyproject.toml
-README.rst
+**/.gitignore
+**/poetry.lock
+**/pyproject.toml
+**/README.rst
