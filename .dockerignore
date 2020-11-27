@@ -10,3 +10,5 @@ temp/
 **/poetry.lock
 **/pyproject.toml
 **/README.rst
+
+refairy_api/textAnalyzer/
