@@ -8,14 +8,6 @@ refairy-api
 API
 ----------------------------------------
 
-GET /
-~~~~~~
-response Text
-
-.. code-block:: Python
-
-    "Hello, ReFairy!"
-
 POST /check
 ~~~~~~~~~~~
 request JSON
