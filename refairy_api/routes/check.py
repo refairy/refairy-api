@@ -1,14 +1,18 @@
 from typing import List
 from sanic.request import Request
 from sanic.response import HTTPResponse, json
-from ..utils.filter import filter_sentences
+from ..utils.filter import filter_sentences, filter_duplicates
 
 async def check(request: Request) -> HTTPResponse:
     """
     Returns the checked data.
     """
     sentences: List[str] = request.json["sentences"]
-    sentences = filter_sentences(sentences)
+    sentences = filter_duplicates(
+        filter_sentences(
+            sentences
+        )
+    )
 
     response = [
         {
