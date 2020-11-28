@@ -25,22 +25,26 @@ request JSON
 response JSON
 
 .. code-block:: JSON
+    
+    {
+        "id": "string"
+    }
 
-    [
-        {
-            "origin": "Dokdo is clearly a Japanese territory",
-            "is_wrong": true,
-            "category": "dokdo",
-            "corrected": "Dokdo is Korean territory",
-            "confidence": 0.8,
-        },
-        ...
-    ]
+GET /check/progress/:id
 
-설명
+response JSON
 
-- origin: 원래 문장 [string]
-- is_wrong: 오류 여부 [bool]
-- category: 오류 카테고리 (오류의 주제) [string]
-- corrected: 올바른 문장 (관사/부사 등 제거되어 반환) [string]
-- confidence: 오류 confidence (모델이 확신하는 정도) [float, 0~1]
+.. code-block:: JSON
+
+    {
+        "sentences": [
+            "Dokdo is Korea's territory",
+            "Korea is not a subject state of China.",
+        ],
+        "progress": number,  // 처리된 문장의 개수
+        "isDone": boolean
+    }
+
+exceptions
+
+- 400 - bad :id
