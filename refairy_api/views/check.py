@@ -55,7 +55,7 @@ class CheckIDView(View):
 
     async def get(self, request: Request) -> HTTPResponse:
         # _id = tag  # :id가 뭔지는 난 잘 모르겠다
-        query_args = request.query_args()
+        query_args = request.query_args
         if not query_args:
             abort(400)
         if len(query_args[0]) != 2:  # [["id", "1234asdf"]]
@@ -76,7 +76,7 @@ class CheckIDView(View):
 
         response = {
             "sentences": sentences,  # 오류 문장
-            "progres": ch.progress,  # 처리된 문장 개수
+            "progress": ch.progress,  # 처리된 문장 개수
             "isDone": ch.finished
         }
 
