@@ -8,10 +8,11 @@ def test_filter_sentences():
         "Jeju-do belongs to Korea",
         "This",
         "lol",
+        "Two words",
     ]
     filtered = filter_sentences(sentences)
     for s in filtered:
-        assert len(s.split(' ')) > 1
+        assert len(s.split(' ')) > 2
     assert len(filtered) == 3
 
 def test_filter_duplicates():

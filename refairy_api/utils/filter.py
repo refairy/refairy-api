@@ -7,7 +7,7 @@ def filter_sentences(sentences: List[str]):
     """
     return list(
         filter(
-            lambda x: len(x.split(' ')) > 1,
+            lambda x: len(x.split(' ')) > 2,
             sentences
         )
     )
