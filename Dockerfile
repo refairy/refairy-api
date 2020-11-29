@@ -12,5 +12,6 @@ RUN python -m nltk.downloader averaged_perceptron_tagger
 RUN python -m nltk.downloader maxent_ne_chunker
 RUN python -m nltk.downloader maxent_treebank_pos_tagger
 RUN python -m nltk.downloader wordnet
+RUN python -m nltk.downloader words
 
 CMD python -m refairy_api
