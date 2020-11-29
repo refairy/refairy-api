@@ -8,6 +8,8 @@ authors = ["sqrtpi177 <solar0037@gmail.com>"]
 python = "^3.8"
 sanic = "^20.9.1"
 nltk = "^3.5"
+numpy = "1.18.5"
+numba = "^0.51.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

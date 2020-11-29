@@ -6,7 +6,7 @@ from sanic.response import HTTPResponse, json
 from sanic.exceptions import abort
 
 from ..classes.view import View
-from ..utils.filter import filter_sentences, filter_duplicates
+from ..utils.filter import _filter
 from ..utils._id import IDmemory  # id 기반 dict memory
 
 from ..textAnalyzer.text_comparison.checking import init, Check
@@ -30,11 +30,10 @@ class CheckView(View):
         Returns the checked data.
         """
         sentences: List[str] = request.json["sentences"]
-        sentences = filter_duplicates(  # (순서 유지) 중복 제거
-            filter_sentences(  # 띄어쓰기 적은 것들 거르기
-                sentences
-            )
-        )
+        # sentences = filter_sentences(sentences)  # (순서 유지) 중복 제거
+        # sentences = filter_duplicates(sentences)  # 띄어쓰기 적은 것들 거르기
+        # sentences = filter_javascript(sentences)  # 자바스크립트 코드 포함된 것들 거르기
+        sentences = _filter(sentences)
 
         # 분석
         ch = Check()
