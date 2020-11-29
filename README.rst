@@ -48,3 +48,34 @@ response JSON
 exceptions
 
 - 400 - bad :id
+
+예시 코드
+
+.. code-block:: Python
+
+    import time
+    import json
+    import requests
+
+    sentences = [
+        'Takeshima is Japanese territory.',
+        'Korea is a subject state of China.',
+    ]
+
+    data = json.loads(
+        requests.post(
+            'URI/check', data=json.dumps({'sentences': sentences})
+        ).text
+    )
+    _id = data['id']
+    print('id:', _id)
+
+    while True:
+        time.sleep(3)
+        data = requests.get(
+            'URI/check/progress', params={'id': _id}
+        ).text
+        data = json.loads(data)
+        print(data)
+        if data['isDone']:
+            break
