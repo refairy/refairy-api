@@ -72,10 +72,10 @@ class CheckIDView(View):
             # _id가 메모리에 없을 때
             abort(400)
         
-        sentences = [d['origin'] for d in ch.response]
+        wrong_sentences = ch.response
 
         response = {
-            "sentences": sentences,  # 오류 문장
+            "sentences": wrong_sentences,  # 오류 문장
             "progress": ch.progress,  # 처리된 문장 개수
             "isDone": ch.finished
         }
